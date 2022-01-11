@@ -97,13 +97,10 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
-            #if UNITY_5_4_OR_NEWER
-            // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadingMode) =>
-            {
-                this.CalledOnLevelWasLoaded(scene.buildIndex);
-            };
-            #endif
+                {
+                    this.CalledOnLevelWasLoaded(scene.buildIndex);
+                };
         }
 
         /// <summary>
@@ -140,6 +137,7 @@ namespace Com.MyCompany.MyGame
             {
                 return;
             }
+
             Health -= 0.1f;
         }
 
@@ -164,14 +162,6 @@ namespace Com.MyCompany.MyGame
 
             Health -= 0.1f * Time.deltaTime;
         }
-
-        #if !UNITY_5_4_OR_NEWER
-        /// <summary> See CalledOnLevelWasLoaded. Outdated in Unity 5.4. </summary>
-        void OnLevelWasLoaded(int level)
-        {
-            this.CalledOnLevelWasLoaded(level);
-        }
-        #endif
 
         void CalledOnLevelWasLoaded(int level)
         {

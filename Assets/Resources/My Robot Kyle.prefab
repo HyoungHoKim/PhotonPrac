@@ -297,7 +297,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beams: {fileID: 6657018935414075276}
+  playerUiPrefab: {fileID: 3446471259077296843, guid: 10d7c426f883a0b4db45c5b08cbac52f, type: 3}
   Health: 1
 --- !u!114 &871367182974635047
 MonoBehaviour:
