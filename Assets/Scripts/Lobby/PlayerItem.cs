@@ -26,7 +26,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        // backgroundImage = GetComponent<Image>();
+        playerAvatar.sprite = avatars[0];
     }
     #endregion
 
